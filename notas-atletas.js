@@ -21,9 +21,22 @@ let atletas = [
 
 function DeterminarNotaMaisAlta(arrayDeNotas){
   console.log(arrayDeNotas)
-  arrayDeNotas.map((v,i)=>{
-    console.log(v)
-    console.log(v > i)
+  arrayDeNotas.map((v,i,a)=>{
+    console.log("Array atual: "+ arrayDeNotas)
+    console.log("valor do index atual: " + arrayDeNotas[i])
+    console.log("valor atual: "+ v)
+    console.log(i)
+    i++
+    if(i<arrayDeNotas.length){
+	    console.log(v + " é maior que " + arrayDeNotas[i] + "?")
+	    console.log(v > a[i])
+	    console.log("\n")
+	    return v
+    }
+    else{
+    	console.log("Encerrado")
+    	console.log("\n")
+    }
   })
 }
 function NotaMaisBaixa(arrayDeNotas){
@@ -31,11 +44,12 @@ function NotaMaisBaixa(arrayDeNotas){
 }
 
 function CalcularMedia(atletas){
-  const notas =[] 
+  const notaMaisAlta = '';
   for(let i = 0; i<atletas.length;i++){
-    notas.push(atletas[i].notas)
+  	const notas =atletas[i].notas
+  	//console.log(notas)
+  	DeterminarNotaMaisAlta(notas)
   }
-  const notaMaisAlta = DeterminarNotaMaisAlta(notas)
   //console.log(notaMaisAlta)
   
 }
